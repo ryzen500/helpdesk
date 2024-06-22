@@ -36,7 +36,7 @@ class Tiket extends CI_Controller
         );
         $this->mteknisi->update($data, $ID_TIKET);
         $this->mteknisi->insert($tiket_detail, 'tiket_detail');
-        redirect('teknisi/dashboard/datatiket');
+        redirect('teknisi/dashboard/datatiket/'.$ID_TIKET);
     }
     
     public function ganti_teknisi($ID_TIKET)
@@ -55,7 +55,7 @@ class Tiket extends CI_Controller
         );
         $this->mteknisi->update($data, $ID_TIKET);
         $this->mteknisi->insert($tiket_detail, 'tiket_detail');
-        redirect('teknisi/dashboard/datatiket');
+             redirect('teknisi/dashboard/datatiket/'.$ID_TIKET);
     }
     public function prosess($ID_TIKET)
     {
@@ -73,7 +73,7 @@ class Tiket extends CI_Controller
         );
         $this->mteknisi->update($data, $ID_TIKET);
         $this->mteknisi->insert($tiket_detail, 'tiket_detail');
-        redirect('teknisi/dashboard/datatiket');
+         redirect('teknisi/dashboard/datatiket/'.$ID_TIKET);
     }
     public function tiket_selesai($ID_TIKET)
     {

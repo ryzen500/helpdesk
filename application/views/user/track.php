@@ -41,7 +41,7 @@
                   <div class="pd bg-white border shad">
                     <div class="nama"><?= !empty($track_user->nama_pelapor) ? $track_user->nama_pelapor : "-" ?> <br>
                       Dari
-                      Ruangan (<?= $track_user->user ?> )</div>
+                      Ruangan (<?= $track_user->divisi_pelapor ?> )</div>
                     <div class="status"><?= "Tiket Masuk" ?></div>
                     <i class="fas fa-clock clock"></i>
                     <div class="jam"><?= date('H:i:s', strtotime($track_user->tanggal_pengajuan)) ?></div>
@@ -66,7 +66,7 @@
                     <div class="pd bg-white border shad">
 
                       <div class="nama">
-                        <?= !empty($value->nama_pelapor) ? $value->nama_pelapor . " <br> Dari Ruangan (" . $value->nama_teknisi . ")" : $value->nama_teknisi ?>
+                        <?= !empty($value->nama_pelapor) ? $value->nama_pelapor . " <br> Dari Ruangan (" . $value->divisi_pelapor . ")" : $value->nama_teknisi ?>
                       </div>
                       <div class="status"><?= $value->status ?></div>
                       <i class="fas fa-clock clock"></i>
@@ -171,7 +171,7 @@ $('#confirmationModal').on('shown.bs.modal', function () {
         placeholder: 'Masukkan Nama Pelapor...',
         allowClear: true,
         ajax: {
-            url: 'http://192.168.30.194/helpdesk-api-dashboard/data-dropdown.php',
+            url: 'http://helpdesk.myftp.org:998/helpdesk-api-dashboard/data-dropdown.php',
             dataType: 'json',
             delay: 250,
             data: function (params) {

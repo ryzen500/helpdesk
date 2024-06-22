@@ -28,9 +28,12 @@ class Dashboard extends CI_Controller
 
 		$this->template->load('teknisi/template', 'teknisi/dashboard', $data);
 	}
-	public function datatiket()
+	public function datatiket($id)
 	{
-		$data['tiket'] = $this->mteknisi->tiket();
+	
+		$data['tiket'] = $this->mteknisi->tiket($id);
+		// echo "<pre>";
+		// var_dump($data);die;
 		$this->template->load('teknisi/template', 'teknisi/data_tiket', $data);
 	}
 	public function tiket_selesai()

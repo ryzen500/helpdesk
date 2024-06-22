@@ -9,7 +9,7 @@ class M_tiket_teknisi extends CI_Model
         return $this->db->get('tiket')->result();
     }
 
-    public function tiket()
+    public function tiket($id)
     {
         $this->db->select('t.*, u.nama_user AS nama_user, d.NAMA_DEPARTEMEN AS NAMA_DEPARTEMEN,s.STATUS_TIKET AS status ');
         $this->db->from('tiket t');
@@ -18,6 +18,7 @@ class M_tiket_teknisi extends CI_Model
         $this->db->join('departemen d', 'd.ID_DEPARTEMEN  =i.ID_DEPARTEMEN');
         $this->db->join('status_tiket s', 's.ID_STATUS =t.STATUS_TIKET');
         $this->db->where('t.TEKNISI', $this->session->userdata('id_user'));
+         $this->db->where('t.ID_TIKET', $id);
         $this->db->where('t.STATUS_TIKET != 7 AND t.STATUS_TIKET != 1 ');
 
 

@@ -162,6 +162,15 @@ class Dashboard extends CI_Controller
     {
         // Form validation rules
         $this->form_validation->set_rules('masalah', 'Nama Masalah', 'trim|required', ['required' => 'Masalah Wajib Diisi !!!']);
+
+            $this->form_validation->set_rules('nama_pelapor', 'Nama Pelapor', 'trim|required', ['required' => 'Nama Pelapor Wajib Diisi !!!']);
+
+
+            $this->form_validation->set_rules('divisi_pelapor', 'Divisi Pelapor', 'trim|required', ['required' => 'Divisi Pelapor Wajib Diisi !!!']);
+        
+
+
+            $this->form_validation->set_rules('id_inventory', 'Departemen Tujuan', 'trim|required', ['required' => 'Departemen Tujuan Wajib Diisi !!!']);
         
         // echo "<pre>";
         // var_dump($_POST);die;

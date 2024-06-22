@@ -36,6 +36,7 @@
                       <?php } ?>
                     </select>
                   </div>
+                       <?= form_error('id_inventory', '<small class="text-danger pl-3">', '</small>') ?>
                 </div>
               </div>
 
@@ -45,6 +46,7 @@
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="id_tiket" name="id_tiket">
                 </div>
+
               </div>
 
 
@@ -60,6 +62,9 @@
                   <select id="myDropdown" class="form-control" name="nama_pelapor">
                     <option value="">--Pilih opsi--</option>
                   </select>
+
+                                    <?= form_error('nama_pelapor', '<small class="text-danger pl-3">', '</small>') ?>
+
                 </div>
 
               </div>
@@ -75,6 +80,8 @@
                       <option>Pilih Departemen Pelapor</option>
                     </select>
                   </div>
+                                    <?= form_error('divisi_pelapor', '<small class="text-danger pl-3">', '</small>') ?>
+
                 </div>
               </div>
 
@@ -156,7 +163,7 @@
     $(document).ready(function () {
       let fileUploadIndex = 1; // Track the file upload count
 
-      var url = 'http://192.168.30.194/helpdesk-api-dashboard/data-dropdown.php';
+      var url = 'http://helpdesk.myftp.org:998/helpdesk-api-dashboard/data-dropdown.php';
       
 
       var divisi_pelapor = '<?php echo site_url('user/Dashboard/get_departemen_pelapor') ?>';

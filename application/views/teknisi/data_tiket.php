@@ -12,7 +12,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800"><b>Tiket Saya</b></h1>
+                    <h1 class="h3 mb-2 text-gray-800"><b>Tiket Yang akan Saya Tindak Lanjut</b></h1>
 
                     <!-- Form Text Box -->
                     <!-- Page Heading -->

@@ -88,17 +88,19 @@ class Mtuser extends CI_Model
     }
     function track($ID_TIKET)
     {
-        $this->db->select('td.*, u.nama_user AS nama_teknisi,s.STATUS_TIKET AS status ');
+        $this->db->select('td.*,t.divisi_pelapor, u.nama_user AS nama_teknisi,s.STATUS_TIKET AS status ');
         $this->db->from('tiket_detail td');
         $this->db->join('user u', 'u.ID_USER=td.ID_TEKNISI');
         $this->db->join('status_tiket s', 's.ID_STATUS =td.ID_STATUS');
+        $this->db->join('tiket t', ' on td.ID_TIKET = t.ID_TIKET');
+
         $this->db->where('td.ID_TIKET', $ID_TIKET);
         $this->db->order_by('td.ID_TIKET_DETAIL', 'ASC');
         return $this->db->get()->result();
     }
     function track_user($ID_TIKET)
     {
-        $this->db->select('t.nama_pelapor,t.ID_USER,t.ID_TIKET AS ID_TIKETS, t.TANGGAL AS tanggal_pengajuan,t.STATUS_TIKET AS STATUS_TIKET, u.nama_user AS user,s.STATUS_TIKET AS status ');
+        $this->db->select('t.nama_pelapor,t.divisi_pelapor,t.ID_USER,t.ID_TIKET AS ID_TIKETS, t.TANGGAL AS tanggal_pengajuan,t.STATUS_TIKET AS STATUS_TIKET, u.nama_user AS user,s.STATUS_TIKET AS status ');
         $this->db->from('tiket t');
         $this->db->join('user u', 'u.ID_USER=t.ID_USER');
         $this->db->join('status_tiket s', 's.ID_STATUS =t.STATUS_TIKET');
